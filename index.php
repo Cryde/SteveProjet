@@ -1,10 +1,9 @@
 <?php
-// On inclus ici le haut de la page
-include 'global_html/top.php';
+$__TITLE_PAGE__ = '';
+$__DESC_PAGE__ = '';
 
-// Eventuellement si tu as un menu commun à toutes les pages (décommente pour voir) : 
-// include 'global_html/menu.php';
 
+ob_start();
 /*
  * C'est ici que la page va se charger en fonction de l'URL
  * Par exemple "tonsite.com/index.php?page=contact"
@@ -44,6 +43,14 @@ else{
 	// et ça sera la page home !
 	include 'includes/home.php';
 }
+$content = ob_get_clean();
+
+// On inclus ici le haut de la page
+include 'global_html/top.php';
+// Eventuellement si tu as un menu commun à toutes les pages (décommente pour voir) :
+include 'global_html/menu.php';
+
+echo $content;
 
 // Bas de la page
-include 'global_html/top.php';
+include 'global_html/bottom.php';
