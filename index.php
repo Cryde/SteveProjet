@@ -46,4 +46,4 @@ else{
 }
 
 // Bas de la page
-include 'global_html/top.php';
+include 'global_html/bottom.php';
